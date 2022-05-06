@@ -391,3 +391,13 @@ source, those usually carry the comment of what exactly needs to be fixed.
 The license for the original work is [MIT](https://opensource.org/licenses/MIT).
 
 Special thanks to [ttacon](https://github.com/ttacon) for yielding the crate name.
+
+## OpenCV Build
+
+```shell
+mkdir opencv_build && cd opencv_build
+cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_ZLIB=OFF -DBUILD_SHARED_LIBS=OFF ../opencv
+make VERBOSE=1 -j8
+```
+
+[opencv_config_reference](https://docs.opencv.org/4.x/db/d05/tutorial_config_reference.html)
