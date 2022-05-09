@@ -147,7 +147,7 @@ impl Library {
 
 	#[inline]
 	fn emit_link_lib(lib: &str, typ: Option<&str>) -> String {
-		format!("cargo:rustc-link-lib={}{}", typ.map_or_else(|| "".to_string(), |t| format!("{}=", t)), lib)
+		format!("cargo:rustc-link-lib=static={}{}", typ.map_or_else(|| "".to_string(), |t| format!("{}=", t)), lib)
 	}
 
 	fn process_env_var_list<'a, T: From<&'a str>>(env_list: Option<EnvList<'a>>, sys_list: Vec<T>) -> Vec<T> {
